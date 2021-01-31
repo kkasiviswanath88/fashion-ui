@@ -17,7 +17,7 @@
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
-      <a href="main.html" class="navbar-brand">Friend's Store</a>
+      <a href="index.html" class="navbar-brand">Friend's Store</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -390,7 +390,7 @@
 
   </script>
   <script type="text/javascript">
-    if (!sessionStorage.getItem("is-login")) {
+   if(!sessionStorage.getItem("is-login")){
       window.location = "main.html";
     } else {
       let timer, currSeconds = 0;
@@ -418,10 +418,8 @@
       function startIdleTimer() {
         /* Increment the timer seconds */
         currSeconds++;
-
-        //if(currSeconds === 60){
         if (currSeconds === 60) {
-          sessionStorage.setItem("is-login", false);
+          sessionStorage.setItem("is-login", "");
           window.location = "main.html";
         }
         //console.log("currSeconds",currSeconds)
@@ -429,7 +427,7 @@
     }
 
     logout = () => {
-      sessionStorage.setItem("is-login", false);
+      sessionStorage.setItem("is-login", "");
       window.location = "main.html";
     }
   </script>

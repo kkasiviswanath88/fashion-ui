@@ -108,16 +108,16 @@
   //empty field validation
   if(username==""){alert("User Name Should not be empty");} if(password==""){alert("Password should not be empty");}
   //if name and password match
-  if ( username == "friends" && password == "friends"){
+  if ( username == "friends12" && password == "friends12"){
   document.getElementById("error").innerHTML="Log in sucessfull";
-  sessionStorage.setItem("is-login", true);
+  sessionStorage.setItem("is-login", "yes");
   window.location = "index.html";
   return false;
   }
   //code for try upto 3 chance then disable username and password field
   else{
   maxTry--;
-  sessionStorage.setItem("is-login", false);
+  sessionStorage.setItem("is-login", "");
   document.getElementById("error").innerHTML="<br>Incrorrect username and password"+"<br>You have left "+maxTry+" attempt.";
   if(maxTry== 0){
   document.getElementById("username").disabled = true;

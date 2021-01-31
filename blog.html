@@ -16,7 +16,7 @@
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
-      <a href="main.html" class="navbar-brand">Friend's Store</a>
+      <a href="index.html" class="navbar-brand">Friend's Store</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -157,44 +157,7 @@
     $('#year').text(new Date().getFullYear());
 
   </script>
-  <script type="text/javascript"> 
-    if(!sessionStorage.getItem("is-login")){
-        window.location = "main.html";
-      }else{
-        let timer, currSeconds = 0; 
-        function resetTimer() { 
   
-        /* Clear the previous interval */ 
-        clearInterval(timer); 
-  
-        /* Reset the seconds of the timer */ 
-        currSeconds = 0; 
-  
-        /* Set a new interval */ 
-        timer = setInterval(startIdleTimer, 1000); 
-  } 
-  
-    // Define the events that would reset the timer 
-  
-      window.onload = resetTimer; 
-      window.onmousemove = resetTimer; 
-      window.onmousedown = resetTimer; 
-      window.ontouchstart = resetTimer; 
-      window.onclick = resetTimer; 
-      window.onkeypress = resetTimer; 
-  
-      function startIdleTimer() {   
-          /* Increment the timer seconds */ 
-          currSeconds++;  
-          if(currSeconds === 60){
-            sessionStorage.setItem("is-login", false);
-            window.location = "main.html";
-          }
-          //console.log("currSeconds",currSeconds)
-      }
-      } 
-  </script> 
-
 <script type="text/javascript">
   if (!sessionStorage.getItem("is-login")) {
     window.location = "main.html";
@@ -224,10 +187,8 @@
     function startIdleTimer() {
       /* Increment the timer seconds */
       currSeconds++;
-
-      //if(currSeconds === 60){
       if (currSeconds === 60) {
-        sessionStorage.setItem("is-login", false);
+        sessionStorage.setItem("is-login", "");
         window.location = "main.html";
       }
       //console.log("currSeconds",currSeconds)
@@ -235,7 +196,7 @@
   }
 
   logout = () => {
-    sessionStorage.setItem("is-login", false);
+    sessionStorage.setItem("is-login", "");
     window.location = "main.html";
   }
 </script>
